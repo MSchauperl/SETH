@@ -10,7 +10,8 @@ See http://rockt.github.com/SETH/
 
 ## SETUP
 ### Install scala version 2.11.7 and add its location to $PATH
-`wget https://downloads.lightbend.com/scala/2.11.7/scala-2.11.7.tgz`
+
+Download from https://www.scala-lang.org/download/2.11.7.html
 
 `tar -zxf scala-2.11.7.tgz`
 
