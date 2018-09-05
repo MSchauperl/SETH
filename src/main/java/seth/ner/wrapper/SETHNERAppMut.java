@@ -25,11 +25,11 @@ public class SETHNERAppMut {
     SETH seth = new SETH("resources/mutations.txt", true, true);
 
     BufferedReader br = new BufferedReader(new FileReader(new File(args[0])));
-    BufferedWriter bw = new BufferedWriter(new FileWriter(new File("mut_" + args[0])));
-    bw.write("pubmed_id" + "\t" + "section" + "\t" + "start" + "\t" + "end" + "\t" + "mutant_residue" 
-    	                 + "\t" + "wildtype_residue" + "\t" + "mutation_type" + "\t" + "found_term"
+    BufferedWriter bw = new BufferedWriter(new FileWriter(new File("muts_extr_seth.txt")));
+    bw.write("pubmed_id" + "\t" + "section" + "\t" + "start" + "\t" + "end" + "\t" + "mutant_residue"
+    	                 + "\t" + "wildtype_residue" + "\t" + "position" + "\t" + "mutation_type" + "\t" + "found_term"
         			     + "\t" + "tool");
-    bw.newLine();
+    bw.write('\n');
     while(br.ready()){
         String[] line_split = br.readLine().split("\\|");
         String pmid = line_split[0];
@@ -37,9 +37,9 @@ public class SETHNERAppMut {
         String line = line_split[2];
         List<MutationMention> result = seth.findMutations(line);
         for (MutationMention mutation : result) {
-        	String res = pmid + "\t" + section + "\t" + Integer.toString(mutation.getLocation().getStart()) + "\t" 
-        					  + Integer.toString(mutation.getLocation().getStop()) + "\t" + mutation.getMutResidue() + "\t" 
-        					  + mutation.getWtResidue() + "\t" + mutation.getType() + "\t" + mutation.getText() + "\t" + mutation.getTool();
+        	String res = pmid + "\t" + section + "\t" + Integer.toString(mutation.getLocation().getStart()) + "\t"
+        					  + Integer.toString(mutation.getLocation().getStop()) + "\t" + mutation.getMutResidue() + "\t"
+        					  + mutation.getWtResidue() + "\t" + mutation.getPosition() + "\t" + mutation.getType() + "\t" + mutation.getText() + "\t" + mutation.getTool();
         	bw.write(res);
 			bw.newLine();
         	//MutationMention [span=104-108, mutResidue=P, location=90, wtResidue=L, text=L90P, type=SUBSTITUTION, tool=MUTATIONFINDER]
@@ -51,7 +51,5 @@ public class SETHNERAppMut {
         bw.close();
         br.close();
     }
-    
-    }
-    
 
+    }
