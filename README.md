@@ -11,15 +11,53 @@
   - Johannes Kirschnick
   - Eugene Brevdo
 
-## SETUP
+## Installation (Linux)
 ### Install scala version 2.11.7 and add its location to $PATH
 
-Download from https://www.scala-lang.org/download/2.11.7.html
+You could either download scala binaries from https://www.scala-lang.org/download/2.11.7.html
 
-`tar -zxf scala-2.11.7.tgz`
+```
+tar -zxf scala-2.11.7.tgz
 
-`PATH=$PATH:~/blabla/scala-2.11.7/bin`
+export PATH=$PATH:~/blabla/scala-2.11.7/bin
+```
+Or install scala easily with 
+```
+sudo apt install scala
+```
 
-### Install java 8
+
+### Install Java development Kit (JDK v8)
+
+You also need to install JDK (version 8) using 
+```
+sudo apt install openjdk-8-jdk
+``` 
+You could check your installation with `java -version`.
+
+## Usage
+To start, clone this repository
+```
+git clone https://github.com/helmersl/SETH.git
+cd SETH
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
