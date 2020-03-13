@@ -41,23 +41,9 @@ To start, clone this repository
 git clone https://github.com/helmersl/SETH.git
 cd SETH
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Extract NER muation using the following CLI, note that you need to specify your input data (with `PubTator` format) into `txt` file
+```
+java -cp seth.jar seth.ner.wrapper.SETHNERAppMut test_input.txt    
+```
+The results will be wriiten into `muts_extr_seth.txt` file. 
 
